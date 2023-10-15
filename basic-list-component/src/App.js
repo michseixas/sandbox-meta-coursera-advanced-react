@@ -1,41 +1,35 @@
-const topDesserts = [
+import "./App.css";
+import DessertsList from "./DessertsList";
+
+const desserts = [
   {
-      id: "1",
-      title: "Tiramisu",
-      description: "The best tiramisu in town",
-      image: "https://picsum.photos/200/300/?random",
-      price: "$5.00",
+    name: "Chocolate Cake",
+    calories: 400,
+    createdAt: "2022-09-01",
   },
   {
-      id: "2",
-      title: "Tarta de crema",
-      description: "Deliciosamente cremosa",
-      image: "https://picsum.photos/200/300/?random",
-      price: "$7.00",
+    name: "Ice Cream",
+    calories: 200,
+    createdAt: "2022-01-02",
   },
   {
-      id: "3",
-      title: "Paçocas",
-      description: "Paçoca es paçoca",
-      image: "https://picsum.photos/200/300/?random",
-      price: "$3.00",
+    name: "Tiramisu",
+    calories: 300,
+    createdAt: "2021-10-03",
+  },
+  {
+    name: "Cheesecake",
+    calories: 600,
+    createdAt: "2022-01-04",
   },
 ];
 
-
-function App () {
-  const listItems = topDesserts.map(dessert => {
-      const itemText = `${dessert.title} - ${dessert.price}`
-      return <li>{itemText}</li>
-  })
+function App() {
   return (
-      <div>
-          <ul>
-              {listItems}
-          </ul>
-      </div>
-
-  )
-}
-
+    <div className="App">
+      <h2>List of low calorie desserts:</h2>
+      <DessertsList data={desserts}/>
+    </div>
+  );
+};
 export default App;
