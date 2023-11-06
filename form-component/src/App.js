@@ -16,7 +16,6 @@ function App() {
     <div className="App">
       <form onSubmit={handleSubmit}>
         <fieldset>
-        <div> 
           <div className="Field">
           {/* connect the label with the input, by setting the id and htmlFor */}
             <label htmlFor="name">Name:</label>
@@ -31,7 +30,6 @@ function App() {
           </div>
           {/* button disabled if no name provided */}
           <button disabled={!name} type="submit">Submit</button>
-          </div>
         </fieldset>
       </form>
     </div>
