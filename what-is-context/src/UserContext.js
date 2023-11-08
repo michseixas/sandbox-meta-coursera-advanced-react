@@ -7,7 +7,7 @@ export const UserProvider = ({ children }) => {
   const [user] = useState({
     name: "Bochimu",
     email: "bochimu@mich.com",
-    dob: "01/01/2001",
+    dob: "01/01/2001"
   });
   return <UserContext.Provider value={{ user }}></UserContext.Provider>;
 };

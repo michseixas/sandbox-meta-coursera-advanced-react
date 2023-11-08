@@ -1,6 +1,7 @@
 import "./App.css";
 import { UserProvider, useUser } from "./UserContext";
 
+
 const LoggedInUser = () => {
   const { user } = useUser();
   return (
@@ -39,6 +40,7 @@ const Page = () => {
 };
 
 function App() {
+  console.log("this is app---->")
   return (
     <div className="App">
       <Header />
@@ -48,6 +50,7 @@ function App() {
 }
 
 function Root() {
+  console.log("this is root---->")
   return (
     <UserProvider>
       <App />
