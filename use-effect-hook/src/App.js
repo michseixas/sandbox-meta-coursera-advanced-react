@@ -27,7 +27,7 @@ function App() {
 
 export default App;
 
-
+//THE CHANGES REFERED HERE ARE HAPPENING IN THE TAB DESCRIPTION OF THE BROWSER!
 //If we want the title on the document to be set on the initial component render only (after that, it doesn't want it updated) 
 //For this to run we need dependency array. The dependency array determines when the useEffect will be invoked.
 // To do this: update the code with an empty dependency array ([],  line 13), meaning I'm not tracking the state of any state variables: 
