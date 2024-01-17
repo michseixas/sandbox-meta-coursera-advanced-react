@@ -27,20 +27,28 @@ const LandingSection = () => {
     initialValues: {
       firstName: "",
       email: "",
-      type: "",
+      type: "hireMe",
       comment: "",
     },
     onSubmit: (values) => {
-      submit(values.firstName);
-      formik.resetForm();
+      submit("https://meta.com", values)
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
-      type: Yup.string(),
-      comment: Yup.string().required("Required").min(25, "Must be at least 25 characters"),
+      comment: Yup.string().min(25, "Must be at least 25 characters").required("Required")
     }),
   });
+
+  useEffect(() => {
+    if(response){
+      onOpen(response.type, response.message);
+      if(response.type === "success"){
+        formik.resetForm()
+      }
+    }
+  }, [response])
+
 
   //`useFormik` hook returns an object with a function called `getFieldProps` that when called, 
   //returns an object with the necessary props to make the input controlled:
@@ -85,9 +93,7 @@ const LandingSection = () => {
                   {...formik.getFieldProps("type")}
                 >
                   <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
-                    Open source consultancy session
-                  </option>
+                  <option value="openSource">Open source consultancy session</option>
                   <option value="other">Other</option>
                 </Select>
               </FormControl>
